@@ -19,7 +19,7 @@ export function LessonWorkspace() {
   const iframe = useRef<HTMLIFrameElement>(null);
   const runId = useRef(0);
   const editor = useRef<HTMLTextAreaElement>(null);
-  const lesson = lessons[course][lessonIndex];
+  const lesson = lessons[course][lessonIndex] ?? lessons[course][0];
   const key = `${course}-${lesson.id}`;
   const code = drafts[key] ?? lesson.code;
   const done = completed.includes(key);
